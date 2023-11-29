@@ -32,4 +32,11 @@ coverage html
 pip install django-filter
 ```
 
+. . .
+Content-Type: application/x-www-form-urlencoded
+. . .
+
+. . .
+pip install httpie
+. . .
 

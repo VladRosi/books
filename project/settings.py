@@ -41,7 +41,9 @@ INSTALLED_APPS = [
   "django.contrib.messages",
   "django.contrib.staticfiles",
   "rest_framework",
+  'rest_framework.authtoken',
   "django_filters",
+  'social_django',
   "store",
   "anime",
 ]
@@ -61,7 +63,7 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
   {
     "BACKEND": "django.template.backends.django.DjangoTemplates",
-    "DIRS": [],
+    "DIRS": [BASE_DIR / 'templates'],
     "APP_DIRS": True,
     "OPTIONS": {
       "context_processors": [
@@ -132,4 +134,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 REST_FRAMEWORK = {
   'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
   'PAGE_SIZE': 10,
+  # 'DEFAULT_AUTHENTICATION_CLASSES': [
+  #   'rest_framework.authentication.TokenAuthentication',
+  # ]
 }
+
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+AUTHENTICATION_BACKENDS = (
+  'social_core.backends.github.GithubOAuth2',
+  'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GITHUB_KEY = '99bf731558e075470dca'
+SOCIAL_AUTH_GITHUB_SECRET = '749013b72cbd645ef43890a7ed2cac142c961463'

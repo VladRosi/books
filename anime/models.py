@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -20,6 +21,7 @@ class Anime(models.Model):
   year = models.IntegerField()
   description = models.TextField(blank=True)
   genre = models.CharField(choices=GENRES_OF_ANIME, max_length=2, default=ACTION)
+  creator = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
   def __str__(self):
     return self.name

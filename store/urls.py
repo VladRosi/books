@@ -7,6 +7,7 @@ router.register(r'book', BookViewSet)
 
 urlpatterns = [
   # path('books/', include(router.urls))
+  
 ]
 
 urlpatterns += router.urls
