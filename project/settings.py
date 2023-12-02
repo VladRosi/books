@@ -44,6 +44,7 @@ INSTALLED_APPS = [
   'rest_framework.authtoken',
   "django_filters",
   'social_django',
+  'debug_toolbar',
   "store",
   "anime",
 ]
@@ -57,6 +58,12 @@ MIDDLEWARE = [
   "django.contrib.messages.middleware.MessageMiddleware",
   "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+if DEBUG:
+  MIDDLEWARE += [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'debug_toolbar_force.middleware.ForceDebugToolbarMiddleware',
+  ]
 
 ROOT_URLCONF = "project.urls"
 
@@ -147,3 +154,7 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_GITHUB_KEY = '99bf731558e075470dca'
 SOCIAL_AUTH_GITHUB_SECRET = '749013b72cbd645ef43890a7ed2cac142c961463'
+
+INTERNAL_IPS = [
+  "127.0.0.1",
+]
