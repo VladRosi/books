@@ -40,3 +40,9 @@ Content-Type: application/x-www-form-urlencoded
 pip install httpie
 . . .
 
+```bash
+telnet python.org
+
+ifconfig 
+
+```

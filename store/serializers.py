@@ -21,7 +21,7 @@ class BooksSerializer(ModelSerializer):
   max_rating = serializers.IntegerField(read_only=True)
   min_rating = serializers.IntegerField(read_only=True)
   owner_name = serializers.CharField(source='owner.username', default='', read_only=True)
-  # owner_name = serializers.CharField(read_only=True) # exe
+  owner_name = serializers.CharField(read_only=True) # exe
   
   
 
